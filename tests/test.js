@@ -1,17 +1,13 @@
-describe('Truth', function () {
-  it('should be true', function () {
-    true.should.be.true
-  })
+var request = require('supertest');
+var app = require(__dirname + '/../app');
 
-  it('should not be false', function () {
-    true.should.not.be.false
-  })
-})
-
-var foo = 'bar'
-
-describe('foo variable', function () {
-  it('should equal bar', function () {
-    foo.should.equal('bar')
+describe('Root page', function () {
+  describe('GET /', function () {
+    it('should redirect to welcome page', function (done) {
+      request(app)
+        .get('/')
+        .expect(200, done)
+        .expect(/Hello word!/, done)
+    })
   })
 })

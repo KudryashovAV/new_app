@@ -1,18 +1,18 @@
 var request = require('supertest');
 var app = require(__dirname + '/../../app');
 
-describe('Pages', function () {
-  describe('GET /home', function () {
+describe('About us', function () {
+  describe('GET /about_us', function () {
     it('should return status code 200', function (done) {
       request(app)
-        .get('/home')
+        .get('/about_us')
         .expect(200, done)
     })
 
-    it('should contain text "Home page"', function (done) {
+    it('should contain text "about page"', function (done) {
       request(app)
-        .get('/home')
-        .expect(/Home page/, done)
+        .get('/about_us')
+        .expect(/about page/, done)
     })
   })
 })

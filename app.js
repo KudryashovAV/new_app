@@ -10,6 +10,7 @@ var users = require('./routes/users');
 
 var app = express();
 var pages = require(__dirname + '/controllers/pages');
+var about_us = require(__dirname + '/controllers/about_us');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,12 +24,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', routes);
+app.use('/', routes);
 app.use('/users', users);
 
 // mount routes
-app.get('/', function (req, res) { res.redirect('home') });
-app.get('/home', pages.home);
+// app.get('/', function (req, res) { res.redirect('index') });
+app.get('/home', pages.index);
+app.get('/about_us', about_us.index);
 
 
 // catch 404 and forward to error handler
