@@ -1,7 +1,24 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='bootstrap/css/bootstrap.css', rel='stylesheet')
+    link(href='stylesheets/style.css', rel='stylesheet')
   body
-    block content
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          .row
+            .col-md-4
+              a.brand(href='/') Node.js demo app
+            .col-md-4
+              = "awdawda"
+            .col-md-4
+              = "awdawcawawda"
+    .container
+      block content
+    script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    script(src='http://code.jquery.com/jquery-latest.js')
+    script(src='bootstrap/js/bootstrap.js')
